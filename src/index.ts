@@ -33,3 +33,14 @@ function addCrewMember(member: string, spaceship: Spaceship) {
     alert(`${member} foi adicionado à tripulação da ${spaceship.name}`)
   }
 }
+
+function sendInMission(spaceship: {name: string, crewLimit: number, crew: string[], inMission:boolean}){
+  if(spaceship.inMission){
+    alert(`${spaceship.name} não pode ser enviada`)
+  }else if(spaceship.crew.length < Math.floor(spaceship.crewLimit / 3)) {
+    alert(`${spaceship.name} não pode ser enviada insuficiente`)
+  }else{
+    spaceship.inMission = true
+    alert(`${spaceship.name} foi enviada`)
+  }
+}
